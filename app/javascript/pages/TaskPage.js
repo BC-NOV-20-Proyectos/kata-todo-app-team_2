@@ -23,6 +23,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
             }
         });
         setTasks("");
+        e.preventDefault();
     }  
     document.onscroll = (e) => {
         if(topCtrls == null) {
@@ -66,9 +67,15 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                                     }
                                 }>
                                 </div>
-                                <button className="btn btn-light ms-2 btn-profile-nav">
-                                    <FontAwesomeIcon icon={faChevronDown}/>
-                                </button>
+                                <div className="dropdown">
+                                    <button className="btn btn-light btn-profile-nav ms-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <FontAwesomeIcon icon={faChevronDown}/>
+                                    </button>
+                                    <ul className="dropdown-menu shadow-md-custom" aria-labelledby="dropdownMenuButton1">
+                                        <li><a className="dropdown-item" href="#">Profile</a></li>
+                                        <li><a data-method="delete" className="dropdown-item" href="/sign_out">Sign out</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -95,17 +102,17 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                                         <span className="ms-2">Delete all</span>
                                     </button>
                                 </div>
-                                <div className="d-flex flex-grow-1 flex-wrap align-items-center justify-content-end mt-2 mt-lg-0">
+                                <form onSubmit={handleOnClick} className="d-flex flex-grow-1 flex-wrap align-items-center justify-content-end mt-2 mt-lg-0">
                                     <input value={tasksArray} onChange={handleOnChange} 
                                     type="text" id="" 
                                     className="flex-grow-1 text-dark px-4 bg-gray form-control input-custom rounded-buttons" 
                                     placeholder = "Type the task name here..."/>
-                                    <button onClick={handleOnClick} className="flex-grow-1 flex-lg-grow-0 px-3 ms-3 btn btn-primary rounded-buttons"
+                                    <button type="submit" className="flex-grow-1 flex-lg-grow-0 px-3 ms-3 btn btn-primary rounded-buttons"
                                     disabled={tasksArray == ""}>
                                         <FontAwesomeIcon icon={faPlus}/>
-                                        <span className="ms-2 d-none d-md-flex">Add Task</span>
+                                        <span className="ms-2 d-none d-md-inline-block">Add Task</span>
                                     </button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

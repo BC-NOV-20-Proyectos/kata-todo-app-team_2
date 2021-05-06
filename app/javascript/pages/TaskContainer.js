@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskPage from './TaskPage';
+import ErrorController from '../controllers/ErrorController';
 import config from '../config';
 
 import axios from 'axios';
@@ -23,7 +24,7 @@ class TaskContainer extends React.Component {
                 tasks: tasks.data.tasks
             })
         } catch(error) {
-            alert("Error in the server");
+            ErrorController.errorServer(error.response);
         }
     }
 
@@ -35,7 +36,7 @@ class TaskContainer extends React.Component {
             await axios.post(config.routes.getTasks(), jsonTask);
             this.getTasks();
         } catch(error) {
-            alert("Error in the server");
+            ErrorController.errorServer(error.response);
         }
     }
 
@@ -56,7 +57,7 @@ class TaskContainer extends React.Component {
                 tasks
             });
         } catch(error) {
-            alert("Error in the server");
+            ErrorController.errorServer(error.response);
         }
     }
 
@@ -66,7 +67,7 @@ class TaskContainer extends React.Component {
             await axios.delete(config.routes.deleteTask(),{data: jsonTask});
             this.getTasks();
         } catch(error) {
-            alert("Error in the server");
+            ErrorController.errorServer(error.response);
         }
     }
 

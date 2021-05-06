@@ -1,17 +1,21 @@
 let config = {
     routes: {
-        host: hostName + "/api/",
-        getTasks: function() {
-            return config.routes.host + "tasks"
+        hostApi: hostName + "/api/",
+        host: hostName + "/",
+        getTasks: () => {
+            return config.routes.hostApi + "tasks"
         },
-        createTask: function() {
-            return config.routes.host + "tasks"
+        createTask: () => {
+            return config.routes.hostApi + "tasks"
         },
-        updateTask: function() {
-            return config.routes.host + "tasks"
+        updateTask: () => {
+            return config.routes.hostApi + "tasks"
         },
-        deleteTask: function() {
-            return config.routes.host + "tasks"
+        deleteTask: () => {
+            return config.routes.hostApi + "tasks"
+        },
+        sign_in: () => {
+            return config.routes.host + "sign_in"
         }
     }
 }

@@ -132,6 +132,7 @@ h1,h2,h3,h4 {
         color: $dark-color !important;
         box-shadow: $small-shadow !important;
         background-color: $bg-white !important;
+        background: $bg-white !important;
     }
     &:focus {
         outline: none !important;
@@ -203,7 +204,7 @@ h1,h2,h3,h4 {
     .lbl-chk-custom {
         width: 32px;
         height: 32px;
-        background-color: $bg-white;
+        background-color: $bg-white !important;
         box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 4px #FFFFFF;
         border-radius: 10px;
         cursor: pointer;
@@ -211,7 +212,7 @@ h1,h2,h3,h4 {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid $bg-white;
+        border: 3px solid $bg-white;
     }
     .chk-custom {
         display: none;
@@ -219,6 +220,9 @@ h1,h2,h3,h4 {
         &:checked + .lbl-chk-custom {
             background: $bg-green !important;
             box-shadow: $inner-shadow-radios;
+            &:active {
+                box-shadow: $inner-active-shadow-radios;
+            }
         }
     }
 }
@@ -247,6 +251,27 @@ h1,h2,h3,h4 {
     &:active {
         box-shadow: $inner-shadow-buttons !important;
     }
+}
+
+#ctrlTaskMain {
+    z-index: 0;
+}
+
+.dropdown-menu {
+    z-index: 100;
+    border-radius: 10px !important;
+    border: 0px solid !important;
+    background-color: $bg-gray !important;
+    color: $dark-color !important;
+}
+
+.dropdown-toggle::after {
+    content: '' !important;
+    display: none !important;
+}
+
+.shadow-md-custom {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
 }
 
 @keyframes showTask {
