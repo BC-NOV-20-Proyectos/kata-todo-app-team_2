@@ -1,5 +1,6 @@
 class Api::TasksController < ApplicationController
     skip_before_action :verify_authenticity_token
+    before_action :is_auth
 
     def index
         @tasks = Task.select("id,name,status").order("created_at")
