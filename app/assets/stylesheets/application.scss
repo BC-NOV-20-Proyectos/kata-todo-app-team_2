@@ -1,0 +1,285 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import 'variables';
+
+body {
+    font-family: "Quicksand" !important;
+    color: $dark-color !important;
+    background-color: $bg-gray !important;
+}
+
+body::-webkit-scrollbar-track {
+	background: $bg-gray;
+}
+
+body::-webkit-scrollbar {
+	background: rgba(0, 0, 0, 0);
+	width: 10px;
+	height: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #ddd;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background: #bbb;
+}
+
+h1,h2,h3,h4 {
+    font-family: "Quicksand" !important;
+    font-weight: bold !important;
+}
+
+.text-dark-custom {
+    color: $dark-color !important;
+}
+.text-white-custom {
+    color: $bg-white !important;
+}
+.text-gray-darken {
+    color: $bg-gray-darken !important;
+}
+
+.text-secondary-dark {
+    color: $dark-secondary-color !important;
+}
+
+.input-custom {
+    border: 0px !important;
+    width: auto !important;
+    box-shadow: $inner-shadow-inputs;
+
+    &:focus {
+        outline: none !important;
+        box-shadow: $inner-shadow-inputs !important;
+    }
+}
+
+.btn {
+    font-weight: 700 !important;
+}
+
+.btn-primary, .swal2-confirm {
+    background: $bg-blue !important;
+    border: none !important;
+    box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
+
+    &:focus {
+        outline: none !important;
+        box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
+    }
+    &:active {
+        box-shadow: $inner-shadow-buttons !important;
+    }
+}
+
+.btn-green {
+    background: $bg-green !important;
+    border: none !important;
+    box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(0, 197, 173, 0.3);
+    
+    &:focus {
+        outline: none !important;
+        box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(0, 197, 173, 0.3) !important;
+    }
+    &:active {
+        box-shadow: $inner-shadow-buttons !important;
+    }
+}
+
+
+.btn-light, .swal2-cancel {
+    background-color: $bg-gray !important;
+    border: none !important;
+    box-shadow: $small-shadow !important;
+    
+    &:focus {
+        outline: none !important;
+        box-shadow: $small-shadow !important;
+    }
+    &:active {
+        box-shadow: $inner-shadow-buttons !important;
+    }
+}
+
+.swal2-confirm, .swal2-cancel {
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+    color: $bg-white !important;
+}
+
+.swal2-cancel {
+    color: $dark-color !important;
+    box-shadow: $small-shadow !important;
+    background-color: $bg-white !important;
+    &:hover {
+        color: $dark-color !important;
+        box-shadow: $small-shadow !important;
+        background-color: $bg-white !important;
+        background: $bg-white !important;
+    }
+    &:focus {
+        outline: none !important;
+        box-shadow: $inner-shadow-buttons  !important;
+    }
+}
+
+.swal2-modal {
+    background-color: $bg-gray !important;
+    border-radius: 10px !important;
+}
+
+.rounded-buttons {
+    border-radius: 30px !important;
+}
+.bg-gray {
+    background-color: $bg-gray !important;
+}
+
+.shadow-sm-custom {
+    box-shadow: $small-shadow !important;
+}
+
+.card-task {
+    background-color: $bg-white;
+    box-shadow: $shadow-task-card;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    animation: showTask .4s ease;
+    .btn-ctrl {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:active {
+            box-shadow: $inner-shadow-buttons !important;
+        }
+    }
+
+    .cont-task-name {
+        flex: 1;
+    }
+    .task-name {
+        width: 100% !important;
+        font-size: 18px;
+        border: none !important;
+        background-color: transparent !important;
+        color: $dark-color !important;
+        &:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    &--checked {
+        color: $dark-secondary-color !important;
+        transition: 0.2s ease;
+        box-shadow: $inner-shadow-task-card;
+        .task-name {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.cont-chk-custom {
+    height: 32px;
+    .lbl-chk-custom {
+        width: 32px;
+        height: 32px;
+        background-color: $bg-white !important;
+        box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 4px #FFFFFF;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid $bg-white;
+    }
+    .chk-custom {
+        display: none;
+
+        &:checked + .lbl-chk-custom {
+            background: $bg-green !important;
+            box-shadow: $inner-shadow-radios;
+            &:active {
+                box-shadow: $inner-active-shadow-radios;
+            }
+        }
+    }
+}
+
+.shadow-lg-custom {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.profile-picture {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    box-shadow: $shadow-task-card;
+}
+
+.btn-profile-nav {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+    box-shadow: $shadow-task-card;
+
+    &:active {
+        box-shadow: $inner-shadow-buttons !important;
+    }
+}
+
+#ctrlTaskMain {
+    z-index: 0;
+}
+
+.dropdown-menu {
+    z-index: 100;
+    border-radius: 10px !important;
+    border: 0px solid !important;
+    background-color: $bg-gray !important;
+    color: $dark-color !important;
+}
+
+.dropdown-toggle::after {
+    content: '' !important;
+    display: none !important;
+}
+
+.shadow-md-custom {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+@keyframes showTask {
+    from {
+        opacity: 0;
+        box-shadow: none;
+    } to {
+        opacity: 1;
+        box-shadow: $shadow-task-card;
+    }
+}

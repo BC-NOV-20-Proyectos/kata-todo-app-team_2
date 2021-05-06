@@ -1,0 +1,14 @@
+$dark-color: #5b5b5b;
+$dark-secondary-color: #8b8b8b;
+$bg-gray: #f5f5f5;
+$bg-white: #f7f7f7;
+$bg-gray-darken: #ebebeb;
+$bg-blue: linear-gradient(93.08deg, #4b99bb -4.42%, #972abe 109.43%);
+$bg-green: linear-gradient(130.19deg, #00C595 14.34%, #11BAB0 104.6%);
+$small-shadow: 4px 2px 10px rgba(0,0,0, 0.05), -4px -4px 10px rgba(255, 255, 255, 0.8);
+$shadow-task-card: 4px 4px 10px rgba(0, 0, 0, 0.05), -4px -4px 5px rgba(255, 255, 255, 0.7);
+$inner-shadow-task-card: 4px 4px 10px rgba(0, 0, 0, 0), -4px -4px 10px rgba(255, 255, 255, 0), inset 4px 4px 10px rgba(0,0,0, 0.05), inset -4px -4px 10px rgba(255, 255, 255, 0.8);
+$inner-shadow-inputs: inset -4px -4px 4px rgba(255, 255, 255, 0.59), inset 0px 4px 4px rgba(0, 0, 0, 0.05);
+$inner-shadow-buttons: -4px -2px 4px rgba(255, 255, 255, 0), 0px 4px 4px rgba(0, 0, 0, 0), inset -4px -2px 4px rgba(255, 255, 255, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+$inner-shadow-radios: -4px -4px 10px rgba(255, 255, 255, 0.8), 0px 0px 10px rgba(0, 197, 173, 0.3), inset -4px -2px 4px rgba(255, 255, 255, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+$inner-active-shadow-radios: -4px -4px 10px rgba(255, 255, 255, 0.8), 0px 0px 10px rgba(0, 197, 173, 0.3), inset -4px -2px 4px rgba(255, 255, 255, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.4);
