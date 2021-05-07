@@ -85,8 +85,11 @@ let TaskCard = ({task, handleOnUpdate, handleOnDelete}) => {
                         type="checkbox" 
                         name="" id={`chk-${task.id}`} 
                         className="chk-custom" 
-                        checked={task.status == 1}/>
-                        <label htmlFor={`chk-${task.id}`} className="lbl-chk-custom">
+                        checked={task.status == 1}
+                        disabled={editing}/>
+                        <label 
+                        htmlFor={`chk-${task.id}`} 
+                        className="lbl-chk-custom">
                             <FontAwesomeIcon icon={faCheck}/>
                         </label>
                     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import TaskPage from './TaskPage';
 import ErrorController from '../controllers/ErrorController';
 import config from '../config';
+import UIFeatures from '../controllers/UIFeatures';
 
 import axios from 'axios';
 class TaskContainer extends React.Component {
@@ -35,6 +36,7 @@ class TaskContainer extends React.Component {
         try {
             await axios.post(config.routes.getTasks(), jsonTask);
             this.getTasks();
+            UIFeatures.toast("Task added!");
         } catch(error) {
             ErrorController.errorServer(error.response);
         }
@@ -66,6 +68,7 @@ class TaskContainer extends React.Component {
         try {
             await axios.delete(config.routes.deleteTask(),{data: jsonTask});
             this.getTasks();
+            jsonTask["tasks"].length > 1 ? UIFeatures.toast("Tasks deleted!") : UIFeatures.toast("Task deleted!");
         } catch(error) {
             ErrorController.errorServer(error.response);
         }

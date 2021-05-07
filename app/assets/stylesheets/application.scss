@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
@@ -81,11 +80,11 @@ h1,h2,h3,h4 {
 .btn-primary, .swal2-confirm {
     background: $bg-blue !important;
     border: none !important;
-    box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
+    box-shadow: -4px -4px 5px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
 
     &:focus {
         outline: none !important;
-        box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
+        box-shadow: -4px -4px 5px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
     }
     &:active {
         box-shadow: $inner-shadow-buttons !important;
@@ -159,6 +158,10 @@ h1,h2,h3,h4 {
     box-shadow: $small-shadow !important;
 }
 
+.bg-background {
+    background-color: $bg-white;
+}
+
 .card-task {
     background-color: $bg-white;
     box-shadow: $shadow-task-card;
@@ -208,7 +211,7 @@ h1,h2,h3,h4 {
         width: 32px;
         height: 32px;
         background-color: $bg-white !important;
-        box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 4px #FFFFFF;
+        box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 3px #FFFFFF;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s ease;
@@ -226,6 +229,9 @@ h1,h2,h3,h4 {
             &:active {
                 box-shadow: $inner-active-shadow-radios;
             }
+        }
+        &:disabled + .lbl-chk-custom{
+            opacity: 0.5;
         }
     }
 }
@@ -279,10 +285,16 @@ h1,h2,h3,h4 {
     }
     &:active {
         background-color: $bg-gray-darken !important;
+        color: $dark-color !important;
     }
 }
 .shadow-md-custom {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+.Toastify__toast--default {
+    background-color: $bg-white !important;
+    color: $dark-color !important;
 }
 
 @keyframes showTask {
