@@ -13,13 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 @import 'variables';
+
 
 body {
     font-family: "Quicksand" !important;
     color: $dark-color !important;
-    background-color: $bg-gray !important;
 }
 
 body::-webkit-scrollbar-track {
@@ -59,8 +60,10 @@ h1,h2,h3,h4 {
 .text-secondary-dark {
     color: $dark-secondary-color !important;
 }
-.text-white {
-    color: $bg-gray !important;
+
+.bg-white {
+    background-color: #fff !important;
+    background: #fff !important;
 }
 
 .input-custom {
@@ -76,6 +79,13 @@ h1,h2,h3,h4 {
 
 .btn {
     font-weight: 700 !important;
+}
+
+.bg-primary {
+    background-color: $bg-blue !important;
+}
+.bg-green {
+    background-color: #11BAB0 !important;
 }
 
 .btn-primary, .swal2-confirm {
@@ -106,6 +116,9 @@ h1,h2,h3,h4 {
     }
 }
 
+.checked-pdf {
+    text-decoration: line-through;
+}
 
 .btn-light, .swal2-cancel {
     background-color: $bg-gray !important;
@@ -157,6 +170,10 @@ h1,h2,h3,h4 {
 
 .shadow-sm-custom {
     box-shadow: $small-shadow !important;
+}
+
+.text-white {
+    color: $bg-gray !important;
 }
 
 .card-task {
@@ -273,14 +290,6 @@ h1,h2,h3,h4 {
     display: none !important;
 }
 
-.dropdown-item {
-    &:hover {
-        background-color: $bg-gray-darken !important;
-    }
-    &:active {
-        background-color: $bg-gray-darken !important;
-    }
-}
 .shadow-md-custom {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
 }
