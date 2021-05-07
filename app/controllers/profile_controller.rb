@@ -13,12 +13,24 @@ class ProfileController < ApplicationController
 
   def update
     user_data = {current_user.id => profile_params}
-    User.update(user_data.keys,user_data.values)
+    if User.update(user_data.keys,user_data.values)
+      render json: {
+        :code => "OK"
+      }
+    else
+      head 500
+    end
   end
 
   def update_picture
     user = User.find(current_user.id)
-    user.profile_picture.attach(params[:profile_picture])
+    if user.profile_picture.attach(params[:profile_picture])
+      render json: {
+        :code => "OK"
+      }
+    else
+      head 500
+    end
   end
 
   private 
