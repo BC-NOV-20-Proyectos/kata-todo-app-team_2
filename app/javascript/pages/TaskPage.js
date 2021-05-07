@@ -87,7 +87,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                     </div>
                 </div>
             </div>
-            <div id="ctrlTaskMain" className={`w-100 bg-gray py-md-4 pb-4 pt-0 sticky-top ${onTop}`}>
+            <div id="ctrlTaskMain" className={`rounded-custom-bottom w-100 bg-gray py-md-4 pb-3 pt-0 sticky-top ${onTop}`}>
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-10 col-12 mt-2">
