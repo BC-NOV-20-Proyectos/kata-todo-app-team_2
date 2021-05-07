@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3 py-1">
+            <span class=""><%= Time.now.strftime("%d/%m/%Y") %></span>
+        </div>
+        <div class="col-12">
+            <div class="mt-5 px-4 text-center text-dark">
+                <%= image_tag image_url "logo-pdf.png" %>
+            </div>
+        </div>
+        <div class="col-10 mx-auto">
+            <hr>
+
+            <% @tasks.each do |task| %>
+                <div class="d-flex bg-light my-3 px-4 py-2 pt-3 rounded <%= 'bg-green text-white' if task[:status] == 1 %>">
+                   <% if task[:status] == 1 %> &#10003 <%end%> <h4 class="ms-2 <%='checked-pdf d-inline-block' if task[:status] == 1 %>"><%=task[:name]%><h4>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
