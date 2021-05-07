@@ -3,7 +3,7 @@ class Api::TasksController < ApplicationController
     before_action :is_auth
 
     def index
-        @tasks = Task.select("id,name,status").order("created_at DESC")
+        @tasks = Task.select("id,name,status").where("user_id=#{current_user.id}").order("created_at DESC")
         render json: {
             tasks: @tasks
         }
@@ -15,7 +15,7 @@ class Api::TasksController < ApplicationController
         tasks_split = tasks.split(",")
         tasks_split.each do |task|
             was_created =  Task.create!({
-                user_id: 1,
+                user_id: current_user.id,
                 name: task.strip,
                 status: tasks_params[:status]
             })
@@ -34,7 +34,7 @@ class Api::TasksController < ApplicationController
         was_updated = false
         tasks.each do |task|
             was_updated =  Task.find(task[:id]).update({
-                user_id: 1,
+                user_id: current_user.id,
                 name: task[:name],
                 status: params[:status]
             })

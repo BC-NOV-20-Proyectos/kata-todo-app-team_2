@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import TaskCard from '../components/TaskCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faTrash, faCheck, faSmileBeam, faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTrash, faCheck, faSmileBeam, faChevronDown, faFilePdf, faFileCsv, faEllipsisV} from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 import Logo from '../../assets/images/logo.png';
 
@@ -86,7 +86,16 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                     <div className="row justify-content-center">
                         <div className="col-lg-10 col-12 mt-2">
                             <div className="d-flex flex-md-row flex-column-reverse flex-1 flex-wrap justify-content-between align-items-md-center">
-                                <div className="d-flex flex-grow-1 flex-wrap justify-content-start align-items-center mt-3 mt-md-0">
+                                <div className="d-flex flex-grow-1 flex-wrap justify-content-md-start justify-content-between align-items-center mt-3 mt-md-0">
+                                    <div className="dropdown me-3">
+                                        <button className="btn btn-light btn-profile-nav dropdown-toggle me-2 text-dark-custom" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <FontAwesomeIcon icon={faEllipsisV}/>
+                                        </button>
+                                        <ul className="dropdown-menu shadow-md-custom text-dark-custom" aria-labelledby="dropdownMenuButton1">
+                                            <li><a target="_blank" className="dropdown-item text-dark-custom" href="/todopdf.pdf"><FontAwesomeIcon icon={faFilePdf}/><span className="ms-2">Export to PDF</span></a></li>
+                                            <li><a target="_blank" className="dropdown-item text-dark-custom" href="/todocsv.csv"><FontAwesomeIcon icon={faFileCsv}/><span className="ms-2">Export to CSV</span></a></li>
+                                        </ul>
+                                    </div>
                                     <button 
                                     onClick={handleOnCheckAll} 
                                     className="px-3 text-white-custom btn btn-green rounded-buttons"
