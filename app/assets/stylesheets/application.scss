@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
@@ -81,11 +80,11 @@ h1,h2,h3,h4 {
 .btn-primary, .swal2-confirm {
     background: $bg-blue !important;
     border: none !important;
-    box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
+    box-shadow: -4px -4px 5px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
 
     &:focus {
         outline: none !important;
-        box-shadow: -4px -4px 10px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
+        box-shadow: -4px -4px 5px rgba(255, 255, 255, 1), 4px 4px 10px rgba(121, 91, 206, 0.3) !important;
     }
     &:active {
         box-shadow: $inner-shadow-buttons !important;
@@ -157,6 +156,10 @@ h1,h2,h3,h4 {
 
 .shadow-sm-custom {
     box-shadow: $small-shadow !important;
+}
+
+.bg-background {
+    background-color: $bg-white;
 }
 
 .card-task {

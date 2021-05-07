@@ -57,7 +57,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                 <div className="container">
                     <div className="row">
                         <div className="d-flex justify-content-between pt-3">
-                            <img src={Logo} width="148px"/>
+                            <a onClick={(e) => window.location = "/"}><img src={Logo} width="148px"/></a>
                             <div className="d-flex align-items-center">
                                 <div className="profile-picture" 
                                 style={
