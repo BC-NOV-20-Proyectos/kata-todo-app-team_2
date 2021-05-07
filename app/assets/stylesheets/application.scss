@@ -211,7 +211,7 @@ h1,h2,h3,h4 {
         width: 32px;
         height: 32px;
         background-color: $bg-white !important;
-        box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 4px #FFFFFF;
+        box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 3px #FFFFFF;
         border-radius: 10px;
         cursor: pointer;
         transition: 0.2s ease;
@@ -229,6 +229,9 @@ h1,h2,h3,h4 {
             &:active {
                 box-shadow: $inner-active-shadow-radios;
             }
+        }
+        &:disabled + .lbl-chk-custom{
+            opacity: 0.5;
         }
     }
 }
@@ -282,10 +285,16 @@ h1,h2,h3,h4 {
     }
     &:active {
         background-color: $bg-gray-darken !important;
+        color: $dark-color !important;
     }
 }
 .shadow-md-custom {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+.Toastify__toast--default {
+    background-color: $bg-white !important;
+    color: $dark-color !important;
 }
 
 @keyframes showTask {
