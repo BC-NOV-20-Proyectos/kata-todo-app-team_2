@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag "sessions" %>
+<div id="clearance" class=" container">
+
+  <div class="row ">
+    <div class="col-12 pt-3">
+      <div className="d-flex justify-content-between"> 
+        <a href="/"><%= image_tag "logo.png", width: "148px" %></a>
+      </div>
+    </div>
+    <div class="col-12 mb-5 mt-4">
+      <div class="mx-auto col-lg-5 col-md-8 col-12 p-4 px-md-5 py-5 shadow-md-custom bg-background rounded-buttons">
+        <h1 class="mb-5"><%= t(".title") %></h1>
+
+        <%= render partial: '/sessions/form' %>
+      </div>
+    </div>
+  </div>
+
+</div>

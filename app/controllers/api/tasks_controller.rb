@@ -51,9 +51,10 @@ class Api::TasksController < ApplicationController
     def destroy 
         tasks = params[:tasks]
         was_deleted = false
-        tasks.each do |task|
-            puts task
-            was_deleted = Task.destroy(task[:id])
+        if(tasks.length > 1)
+            was_deleted = Task.where("user_id = #{current_user.id}").destroy_all()
+        else 
+            was_deleted = Task.destroy(tasks[0][:id])
         end
         if was_deleted
             render json: {
