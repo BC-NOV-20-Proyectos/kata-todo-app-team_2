@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "tasks#home"
+  get "/profile", to: "profile#home"
   get "/todopdf", to: "tasks#get_pdf"
   get "/todocsv", to: "tasks#get_csv"
  

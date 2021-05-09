@@ -12,13 +12,19 @@
  *
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import "bootstrap/dist/css/bootstrap";
+@import 'react-toastify/dist/ReactToastify';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 @import 'variables';
 
+html, body {
+    height: 100%;
+}
 body {
     font-family: "Quicksand" !important;
     color: $dark-color !important;
     background-color: $bg-gray !important;
+    font-weight: 500;
 }
 
 body::-webkit-scrollbar-track {
@@ -63,9 +69,10 @@ h1,h2,h3,h4 {
 }
 
 .input-custom {
+    padding: .5rem 1rem;
     border: 0px !important;
-    width: auto !important;
-    box-shadow: $inner-shadow-inputs;
+    width: auto;
+    box-shadow: $inner-shadow-inputs !important;
 
     &:focus {
         outline: none !important;
@@ -237,7 +244,7 @@ h1,h2,h3,h4 {
 }
 
 .shadow-lg-custom {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
 .profile-picture {
@@ -290,6 +297,11 @@ h1,h2,h3,h4 {
 }
 .shadow-md-custom {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+.Toastify__toast {
+    font-family: "Quicksand" !important;
+    font-weight: 500 !important;
 }
 
 .Toastify__toast--default {

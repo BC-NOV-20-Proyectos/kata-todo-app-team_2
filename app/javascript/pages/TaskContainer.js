@@ -3,8 +3,8 @@ import TaskPage from './TaskPage';
 import ErrorController from '../controllers/ErrorController';
 import config from '../config';
 import UIFeatures from '../controllers/UIFeatures';
-
 import axios from 'axios';
+
 class TaskContainer extends React.Component {
 
     constructor(props) {

@@ -1,4 +1,9 @@
+html {
+    height: 100%;
+}
 body {
-    background-image: url("back-circle.svg");
+    background-image: image-url("back-circle-gradient.svg");
     background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
 }

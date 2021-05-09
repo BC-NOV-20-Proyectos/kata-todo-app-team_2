@@ -78,7 +78,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                                         <FontAwesomeIcon icon={faChevronDown}/>
                                     </button>
                                     <ul className="dropdown-menu shadow-md-custom" aria-labelledby="dropdownMenuButton1">
-                                        <li><a className="dropdown-item" href="#">Profile</a></li>
+                                        <li><a className="dropdown-item" href="/page">Profile</a></li>
                                         <li><a data-method="delete" className="dropdown-item" href="/sign_out">Sign out</a></li>
                                     </ul>
                                 </div>
@@ -127,7 +127,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                                 <form onSubmit={handleOnClick} className="d-flex flex-grow-1 flex-wrap align-items-center justify-content-end mt-2 mt-lg-0">
                                     <input value={tasksArray} onChange={handleOnChange} 
                                     type="text" id="" 
-                                    className="flex-grow-1 text-dark px-4 bg-gray form-control input-custom rounded-buttons" 
+                                    className="flex-grow-1 text-dark px-4 bg-gray input-custom rounded-buttons" 
                                     placeholder = "Type the task name here..."/>
                                     <button type="submit" className="px-3 ms-2 ms-md-3 btn btn-primary rounded-buttons"
                                     disabled={tasksArray == ""}>
