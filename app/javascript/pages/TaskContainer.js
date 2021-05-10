@@ -36,7 +36,11 @@ class TaskContainer extends React.Component {
         try {
             await axios.post(config.routes.getTasks(), jsonTask);
             this.getTasks();
-            UIFeatures.toast("Task added!");
+            let msg = "Task added!";
+            if(jsonTask.task.tasks.split(",").length > 1) {
+                msg = "Tasks added!";
+            }
+            UIFeatures.toast(msg);
         } catch(error) {
             ErrorController.errorServer(error.response);
         }

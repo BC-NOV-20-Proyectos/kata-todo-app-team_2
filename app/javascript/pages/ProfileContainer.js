@@ -11,7 +11,6 @@ class ProfileContainer extends React.Component {
         }
     }
 
-
     render = () => {
         return(
             <ProfilePage/>

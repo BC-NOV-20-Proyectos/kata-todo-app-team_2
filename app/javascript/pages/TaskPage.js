@@ -3,9 +3,8 @@ import TaskCard from '../components/TaskCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faTrash, faCheck, faSmileBeam, faChevronDown, faFilePdf, faFileCsv, faEllipsisV} from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
-import Logo from '../../assets/images/logo.png';
 import { ToastContainer } from 'react-toastify';
-
+import NavBar from '../components/NavBar';
 
 let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
     const [tasksArray, setTasks] = useState("");
@@ -59,34 +58,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
             limit={1}
             autoClose={4000}
             />
-            <div className="w-100 mb-md-5 mb-4">
-                <div className="container">
-                    <div className="row">
-                        <div className="d-flex justify-content-between pt-3">
-                            <a data-method="get" href="/"><img src={Logo} width="148px"/></a>
-                            <div className="d-flex align-items-center">
-                                <div className="profile-picture" 
-                                style={
-                                    {
-                                        backgroundImage: 'url("https://www.mantruckandbus.com/fileadmin/media/bilder/02_19/219_05_busbusiness_interviewHeader_1485x1254.jpg")',
-                                        backgroundSize: 'cover'
-                                    }
-                                }>
-                                </div>
-                                <div className="dropdown">
-                                    <button className="btn btn-light btn-profile-nav ms-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <FontAwesomeIcon icon={faChevronDown}/>
-                                    </button>
-                                    <ul className="dropdown-menu shadow-md-custom" aria-labelledby="dropdownMenuButton1">
-                                        <li><a className="dropdown-item" href="/page">Profile</a></li>
-                                        <li><a data-method="delete" className="dropdown-item" href="/sign_out">Sign out</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <NavBar/>
             <div id="ctrlTaskMain" className={`rounded-custom-bottom w-100 bg-gray py-md-4 pb-3 pt-0 sticky-top ${onTop}`}>
                 <div className="container">
                     <div className="row justify-content-center">
@@ -140,7 +112,7 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
                     </div>
                 </div>
             </div>
-            <div className="w-100 mt-4">
+            <div className="w-100 mt-4 mb-5">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-10 col-12">
