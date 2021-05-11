@@ -10,12 +10,31 @@ class TaskContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: []
+            tasks: [],
+            profile: {
+                name: "",
+                description: "",
+                email: ""
+            },
+            profile_picture: null
         }
     }
 
     componentDidMount = () => {
         this.getTasks();
+        this.getUser();
+    }
+
+    getUser = async () => {
+        try {
+            let response = await axios.get(config.routes.get_profile());
+            this.setState({
+                profile: response.data.user,
+                profile_picture: response.data.picture_link
+            });
+        } catch (error) {
+            ErrorController.errorServer(error);
+        }
     }
 
     getTasks = async () => {
@@ -85,6 +104,8 @@ class TaskContainer extends React.Component {
             handleOnCreate={this.createTask}
             handleOnUpdate={this.updateTask}
             handleOnDelete={this.deleteTask}
+            profile={this.state.profile}
+            picture_link={this.state.profile_picture}
             />
         )
     }

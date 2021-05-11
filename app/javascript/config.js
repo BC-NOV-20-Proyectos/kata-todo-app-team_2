@@ -16,6 +16,15 @@ let config = {
         },
         sign_in: () => {
             return config.routes.host + "sign_in"
+        },
+        get_profile: () => {
+            return config.routes.hostApi + "profile"
+        },
+        update_picture_profile: () => {
+            return config.routes.hostApi + "profile/picture"
+        },
+        update_profile_info: () => {
+            return config.routes.hostApi + "profile/update"
         }
     }
 }

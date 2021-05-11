@@ -1,13 +1,14 @@
 class Api::ProfileController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :require_login
+  before_action :is_auth
 
   def show
     @user = User.select(:id,:email,:name,:description).where(id: current_user.id)[0]
     user = User.find(current_user.id)
+    profile_picture = user.profile_picture.attached? ? url_for(user.profile_picture) : nil
     render json: {
       :user => @user,
-      :picture_link => url_for(user.profile_picture),
+      :picture_link => profile_picture,
     }
   end
 

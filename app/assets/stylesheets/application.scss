@@ -77,7 +77,7 @@ h1,h2,h3,h4 {
     border: 0px !important;
     width: auto;
     box-shadow: $inner-shadow-inputs !important;
-
+    color: $dark-color !important;
     &:focus {
         outline: none !important;
         box-shadow: $inner-shadow-inputs !important;
@@ -260,6 +260,55 @@ h1,h2,h3,h4 {
     height: 48px;
     border-radius: 24px !important;
     box-shadow: $shadow-task-card;
+    background: $bg-blue;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    padding: 0px;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    color: $dark-color;
+    &:focus {
+        outline: none;
+    }
+}
+
+input.profile-name {
+    margin-top: -0.40rem;
+}
+
+.profile-email {
+    padding: 0px;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    color: $dark-color;
+    &:focus {
+        outline: none;
+    }
+}
+
+.profile-description {
+    padding: 0px;
+    border: none;
+    background: transparent;
+    min-height: 250px;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: $bg-gray !important;
+    }
+}
+
+input.profile-email {
+    margin-top: -1rem;
+    transform: translateY(-.1rem);
 }
 
 .btn-profile-nav {
@@ -340,13 +389,35 @@ h1,h2,h3,h4 {
     border: 8px solid $bg-gray;
     margin-bottom: -80px;
     position: relative;
+    background: $bg-blue;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+.cont-profile-ctrl {
+    position: absolute;
+    right: .5rem;
+    top: 0;
+    z-index: 10;
+}
 
-    & .btn-edit {
-        position: absolute;
-        bottom: 0rem;
-        right: .5rem;
-    }
+.btn-edit-profile {
+    width: 42px;
+    height: 42px;
+    border-radius: 21px !important;
+    color: $dark-color !important;
+}
+
+.btn-edit-picture {
+    width: 42px;
+    height: 42px;
+    background: $bg-gray !important;
+    border-radius: 21px !important;
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: 100;
 }
 
 .container-name-profile {
@@ -358,7 +429,43 @@ h1,h2,h3,h4 {
     }
 }
 
+textarea.input-custom {
+    overflow: hidden;
+}
 
+.modal-content {
+    background-color: $bg-gray !important;
+    border-radius: 20px !important;
+
+    button.close {
+        display: flex;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        align-items:center;
+        background-color: $bg-gray !important;
+        border: none !important;
+        border-radius: 16px;
+        box-shadow: $small-shadow !important;
+        
+        &:focus {
+            outline: none !important;
+            box-shadow: $small-shadow !important;
+        }
+        &:active {
+            box-shadow: $inner-shadow-buttons !important;
+        }
+    }
+
+    .modal-header {
+        border-bottom: 0px solid !important;
+    }
+
+    .modal-footer{
+        border-top: 0px solid !important;
+    }
+    
+}
 @keyframes showTask {
     from {
         opacity: 0;
@@ -366,5 +473,33 @@ h1,h2,h3,h4 {
     } to {
         opacity: 1;
         box-shadow: $shadow-task-card;
+    }
+}
+
+@media (max-width: 992px) {
+    .cont-profile-info {
+        margin-bottom: -10rem;
+        transform: translateY(3rem);
+        h1, span, input, textarea {
+            color: $bg-gray !important;
+        }
+    }
+    .container-profile-description {
+        margin-top: 15rem;
+    }
+
+    .cont-profile-ctrl {
+        position: absolute;
+        right: .5rem;
+        top: 38px;
+    }
+
+    textarea.profile-name {
+        margin-top: 0rem;
+    }
+
+    textarea.profile-email {
+        margin-top: 0rem;
+        transform: translateY(0rem) !important;
     }
 }

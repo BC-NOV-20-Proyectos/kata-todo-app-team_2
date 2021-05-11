@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../assets/images/logo.png';
 
-let NavBar = () => (
+let NavBar = ({picture_link}) => (
     <div className="w-100 mb-md-5 mb-4">
         <div className="container">
             <div className="row">
@@ -13,8 +13,8 @@ let NavBar = () => (
                         <a data-method="get" href="/profile" className="btn btn-light p-0 profile-picture" 
                         style={
                             {
-                                backgroundImage: 'url("https://www.mantruckandbus.com/fileadmin/media/bilder/02_19/219_05_busbusiness_interviewHeader_1485x1254.jpg")',
-                                backgroundSize: 'cover'
+                                backgroundColor: "#f5f5f5",
+                                backgroundImage: picture_link ? `url("${picture_link}")` : "",
                             }
                         }>
                         </a>

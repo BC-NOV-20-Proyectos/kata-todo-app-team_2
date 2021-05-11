@@ -6,9 +6,10 @@ import Swal from 'sweetalert2';
 import { ToastContainer } from 'react-toastify';
 import NavBar from '../components/NavBar';
 
-let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
+let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete, profile, picture_link}) => {
     const [tasksArray, setTasks] = useState("");
     const [onTop, setOnTop] = useState("");
+    
     let topCtrls = null;
     const handleOnChange = (e) => {
         setTasks(e.target.value);
@@ -26,16 +27,6 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
         setTasks("");
         e.preventDefault();
     }  
-    document.onscroll = (e) => {
-        if(topCtrls == null) {
-            topCtrls = document.getElementById("ctrlTaskMain").scrollHeight;
-        }
-        if(window.scrollY >= topCtrls) {
-            setOnTop("shadow-lg-custom");
-        } else {
-            setOnTop("");
-        }
-    } 
     const handleOnDestroy = (e) => {
         Swal.fire({
             title: 'Are you sure of delete all the tasks?',
@@ -52,13 +43,23 @@ let TaskPage = ({tasks, handleOnCreate, handleOnUpdate, handleOnDelete}) => {
     const handleOnCheckAll = (e) => {
         handleOnUpdate({tasks: tasks, status: 1});
     }
+    document.onscroll = (e) => {
+        if(topCtrls == null) {
+            topCtrls = document.getElementById("ctrlTaskMain").scrollHeight;
+        }
+        if(window.scrollY >= topCtrls) {
+            setOnTop("shadow-lg-custom");
+        } else {
+            setOnTop("");
+        }
+    } 
     return(
         <React.Fragment>
             <ToastContainer 
             limit={1}
             autoClose={4000}
             />
-            <NavBar/>
+            <NavBar picture_link={picture_link}/>
             <div id="ctrlTaskMain" className={`rounded-custom-bottom w-100 bg-gray py-md-4 pb-3 pt-0 sticky-top ${onTop}`}>
                 <div className="container">
                     <div className="row justify-content-center">
