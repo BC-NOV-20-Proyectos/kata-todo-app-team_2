@@ -53,7 +53,7 @@ let ProfilePage = ({profile, picture_link, handleOnSubmitPicture, handleOnUpdate
                 <div className="container">
                     <div className="row ">
                         <div className="col-lg-4 col-12">
-                            <form onSubmit={handleOnSubmitPicture} className="cont-profile-picture shadow-md-custom mx-auto ms-lg-end"
+                            <form onSubmit={handleOnSubmitPicture} className="ms-lg-auto cont-profile-picture shadow-md-custom"
                             style={
                                 {
                                     backgroundColor: "#f5f5f5",
