@@ -12,13 +12,19 @@
  *
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import "bootstrap/dist/css/bootstrap";
+@import 'react-toastify/dist/ReactToastify';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 @import 'variables';
 
+html, body {
+    height: 100%;
+}
 body {
     font-family: "Quicksand" !important;
     color: $dark-color !important;
     background-color: $bg-gray !important;
+    font-weight: 500;
 }
 
 body::-webkit-scrollbar-track {
@@ -45,6 +51,10 @@ h1,h2,h3,h4 {
     font-weight: bold !important;
 }
 
+.bg-background {
+    background-color: $bg-gray;
+}
+
 .text-dark-custom {
     color: $dark-color !important;
 }
@@ -63,10 +73,11 @@ h1,h2,h3,h4 {
 }
 
 .input-custom {
+    padding: .5rem 1rem;
     border: 0px !important;
-    width: auto !important;
-    box-shadow: $inner-shadow-inputs;
-
+    width: auto;
+    box-shadow: $inner-shadow-inputs !important;
+    color: $dark-color !important;
     &:focus {
         outline: none !important;
         box-shadow: $inner-shadow-inputs !important;
@@ -89,6 +100,14 @@ h1,h2,h3,h4 {
     &:active {
         box-shadow: $inner-shadow-buttons !important;
     }
+}
+
+.bg-blue {
+    background: $bg-blue !important;
+}
+
+.min-h-100 {
+    min-height: 100% !important;
 }
 
 .btn-green {
@@ -156,10 +175,6 @@ h1,h2,h3,h4 {
 
 .shadow-sm-custom {
     box-shadow: $small-shadow !important;
-}
-
-.bg-background {
-    background-color: $bg-white;
 }
 
 .card-task {
@@ -237,14 +252,63 @@ h1,h2,h3,h4 {
 }
 
 .shadow-lg-custom {
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
 .profile-picture {
     width: 48px;
     height: 48px;
-    border-radius: 24px;
+    border-radius: 24px !important;
     box-shadow: $shadow-task-card;
+    background: $bg-blue;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    padding: 0px;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    color: $dark-color;
+    &:focus {
+        outline: none;
+    }
+}
+
+input.profile-name {
+    margin-top: -0.40rem;
+}
+
+.profile-email {
+    padding: 0px;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    color: $dark-color;
+    &:focus {
+        outline: none;
+    }
+}
+
+.profile-description {
+    padding: 0px;
+    border: none;
+    background: transparent;
+    min-height: 250px;
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: $bg-gray !important;
+    }
+}
+
+input.profile-email {
+    margin-top: -1rem;
+    transform: translateY(-.1rem);
 }
 
 .btn-profile-nav {
@@ -292,11 +356,116 @@ h1,h2,h3,h4 {
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
 }
 
+.Toastify__toast {
+    font-family: "Quicksand" !important;
+    font-weight: 500 !important;
+}
+
 .Toastify__toast--default {
     background-color: $bg-white !important;
     color: $dark-color !important;
 }
 
+.rounded-custom-bottom {
+    border-radius: 0px 0px 20px 20px;
+}
+
+.btn-edit {
+    width: 42px;
+    height: 42px;
+    border-radius: 21px !important;
+    color: $dark-color !important;
+    background: $bg-gray !important;
+    
+    &:active {
+        box-shadow: $inner-shadow-buttons !important;
+    }
+}
+
+.cont-profile-picture {
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+    border: 8px solid $bg-gray;
+    margin-bottom: -80px;
+    position: relative;
+    background: $bg-blue;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cont-profile-ctrl {
+    position: absolute;
+    right: .5rem;
+    top: 0;
+    z-index: 10;
+}
+
+.btn-edit-profile {
+    width: 42px;
+    height: 42px;
+    border-radius: 21px !important;
+    color: $dark-color !important;
+}
+
+.btn-edit-picture {
+    width: 42px;
+    height: 42px;
+    background: $bg-gray !important;
+    border-radius: 21px !important;
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    z-index: 100;
+}
+
+.container-name-profile {
+    position: relative;
+    & .btn-edit {
+        position: absolute;
+        top: 0rem;
+        right: 1rem;
+    }
+}
+
+textarea.input-custom {
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: $bg-gray !important;
+    border-radius: 20px !important;
+
+    button.close {
+        display: flex;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        align-items:center;
+        background-color: $bg-gray !important;
+        border: none !important;
+        border-radius: 16px;
+        box-shadow: $small-shadow !important;
+        
+        &:focus {
+            outline: none !important;
+            box-shadow: $small-shadow !important;
+        }
+        &:active {
+            box-shadow: $inner-shadow-buttons !important;
+        }
+    }
+
+    .modal-header {
+        border-bottom: 0px solid !important;
+    }
+
+    .modal-footer{
+        border-top: 0px solid !important;
+    }
+    
+}
 @keyframes showTask {
     from {
         opacity: 0;
@@ -304,5 +473,38 @@ h1,h2,h3,h4 {
     } to {
         opacity: 1;
         box-shadow: $shadow-task-card;
+    }
+}
+
+@media (max-width: 992px) {
+    .cont-profile-info {
+        margin-bottom: -10rem;
+        transform: translateY(3rem);
+        h1, span, input, textarea {
+            color: $bg-gray !important;
+        }
+    }
+    .container-profile-description {
+        margin-top: 15rem;
+    }
+
+    .cont-profile-ctrl {
+        position: absolute;
+        right: .5rem;
+        top: 38px;
+    }
+
+    .cont-profile-picture {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    textarea.profile-name {
+        margin-top: 0rem;
+    }
+
+    textarea.profile-email {
+        margin-top: 0rem;
+        transform: translateY(0rem) !important;
     }
 }

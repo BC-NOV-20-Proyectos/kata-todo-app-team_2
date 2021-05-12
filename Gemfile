@@ -37,12 +37,13 @@ gem 'bootstrap_forms'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
+gem 'clearance'
+gem 'activestorage'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'clearance'
-  gem 'activestorage'
 end
 
 group :development do

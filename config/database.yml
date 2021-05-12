@@ -24,9 +24,9 @@ default: &default
 development:
   <<: *default
   database: todo_development
-  host: todo_db
+  host: localhost
   user: root
-  password: teamgodzilla**00
+  password: toor
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
